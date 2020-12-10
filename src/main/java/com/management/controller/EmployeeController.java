@@ -25,7 +25,7 @@ public class EmployeeController {
     }
 
     private void listEmployeesTest() {
-        List<Employee> get = employeeService.getAllEmployees();
-        get.forEach(System.out::println);
+        List<Employee> allEmployees = employeeService.getAllEmployees();
+        allEmployees.forEach(System.out::println);
     }
 }

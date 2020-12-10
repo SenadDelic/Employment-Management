@@ -21,22 +21,21 @@ public class DataLoader implements CommandLineRunner {
 
     private void loadData() {
         Employee mujo = new Employee();
-        mujo.setFirstName("Mujaga");
-        mujo.setLastName("Mujagic");
-        mujo.setEmail("mujo.mujagic@someEmail");
-        Employee saveMujo = employeeService.save(mujo);
+        mujo.setFirstName("Mujo");
+        mujo.setLastName("Mujaga");
+        mujo.setEmail("mujo.mujagin@someEmail");
+        employeeService.save(mujo);
 
-        Employee haso = new Employee();
-        mujo.setFirstName("Haso");
-        mujo.setLastName("Husic");
-        mujo.setEmail("haso.husic@someEmail");
-        Employee saveHaso = employeeService.save(haso);
+        Employee huso = new Employee();
+        huso.setFirstName("Huso");
+        huso.setLastName("Husnija");
+        huso.setEmail("huso.husnija@someEmail");
+        employeeService.save(huso);
 
-        Employee husnija = new Employee();
-        mujo.setFirstName("Husnija");
-        mujo.setLastName("Haman");
-        mujo.setEmail("husnija.haman@someEmail");
-        Employee saveHusnija = employeeService.save(husnija);
-
+        Employee mehmed = new Employee();
+        mehmed.setFirstName("Mehmedaga");
+        mehmed.setLastName("Mehmed");
+        mehmed.setEmail("mehmedaga@someEmail");
+        employeeService.save(mehmed);
     }
 }
