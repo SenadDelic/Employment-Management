@@ -6,6 +6,7 @@ import com.management.service.EmployeeService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class EmployeeSpringDataService implements EmployeeService {
@@ -23,5 +24,10 @@ public class EmployeeSpringDataService implements EmployeeService {
     @Override
     public Employee save(Employee employee) {
         return employeeRepository.save(employee);
+    }
+
+    @Override
+    public Employee getEmployeeById(Long id) {
+        return employeeRepository.findById(id).orElse(null);
     }
 }
