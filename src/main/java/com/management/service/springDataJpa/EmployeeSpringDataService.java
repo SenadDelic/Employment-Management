@@ -22,8 +22,8 @@ public class EmployeeSpringDataService implements EmployeeService {
     }
 
     @Override
-    public Employee save(Employee employee) {
-        return employeeRepository.save(employee);
+    public void save(Employee employee) {
+        employeeRepository.save(employee);
     }
 
     @Override
