@@ -24,18 +24,24 @@ public class DataLoader implements CommandLineRunner {
         mujo.setFirstName("Mujo");
         mujo.setLastName("Mujaga");
         mujo.setEmail("mujo.mujagin@someEmail");
+        mujo.setAddress("Srebrenik");
+        mujo.setPhoneNumber("327-321-321");
         employeeService.save(mujo);
 
         Employee huso = new Employee();
         huso.setFirstName("Huso");
         huso.setLastName("Husnija");
         huso.setEmail("huso.husnija@someEmail");
+        huso.setAddress("Tuzla");
+        huso.setPhoneNumber("327-321-321");
         employeeService.save(huso);
 
         Employee mehmed = new Employee();
         mehmed.setFirstName("Mehmedaga");
         mehmed.setLastName("Mehmed");
         mehmed.setEmail("mehmedaga@someEmail");
+        mehmed.setAddress("Banja Luka");
+        mehmed.setPhoneNumber("327-321-321");
         employeeService.save(mehmed);
     }
 }

@@ -28,30 +28,32 @@ public class EmployeeController {
 
     @GetMapping("/addEmployee")
     public String addEmployee(Model model) {
-        // create form for employee(this way we have employee firstName,LastName and email)..
         Employee employee = new Employee();
         model.addAttribute("employee", employee);
 
         return "addNewEmployee";
     }
 
+    @PostMapping("/saveEmployee")
+    public String saveEmployee(@ModelAttribute("employee") Employee employee) {
+        employeeService.save(employee);
+
+        return "redirect:/";
+    }
+
     @GetMapping("/updateEmployee/{id}")
     public String updateEmployee(@PathVariable(value = "id") long id, Model model) {
         Employee employee = employeeService.getEmployeeById(id);
+        employeeService.deleteEmployeeById(id);
         model.addAttribute("employee", employee);
 
         return "updateEmployee";
     }
 
-    @PostMapping("/saveEmployee")
-    public String saveEmployee(@ModelAttribute("employee") Employee employee) {
-        employeeService.save(employee);
+    @GetMapping("/deleteEmployee/{id}")
+    public String deleteEmployee(@PathVariable(value = "id") long id) {
+        employeeService.deleteEmployeeById(id);
 
-        return "redirect:/"; // redirect to homePage(indexPage, Ok)
-    }
-
-    private void listEmployeesTest() {
-        List<Employee> allEmployees = employeeService.getAllEmployees();
-        allEmployees.forEach(System.out::println);
+        return "redirect:/";
     }
 }
