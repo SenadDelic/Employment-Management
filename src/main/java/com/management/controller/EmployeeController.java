@@ -17,7 +17,7 @@ public class EmployeeController {
         this.employeeService = employeeService;
     }
 
-    @GetMapping("/")
+    @GetMapping(value = "/")
     public String homePage(Model model) {
         model.addAttribute("listEmployees", employeeService.getAllEmployees());
 
@@ -42,8 +42,8 @@ public class EmployeeController {
     @GetMapping("/updateEmployee/{id}")
     public String updateEmployee(@PathVariable(value = "id") long id, Model model) {
         Employee employee = employeeService.getEmployeeById(id);
-        employeeService.deleteEmployeeById(id);
         model.addAttribute("employee", employee);
+        deleteEmployee(id);
 
         return "updateEmployee";
     }
